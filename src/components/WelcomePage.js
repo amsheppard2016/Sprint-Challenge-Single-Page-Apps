@@ -4,11 +4,14 @@ import styled from "styled-components";
 const Header = styled.header`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
 `;
 
 const ImgClass = styled.div`
-    width: 50%;
+    width: 300px;
+    height: 300px;
+    border: solid 4px #5b8466;
 `;
 
 export default function WelcomePage() {

@@ -2,15 +2,22 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
+const Search = styled.form`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3%;
+`;
+
 const SearchResults = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 `;
 const Card = styled.div`
-    background-color: #53c291;
+    background: #c7493a;
     width: 30%;
-    border: solid 2px black;
+    border: solid 4px #5b8466;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -40,7 +47,7 @@ export default function SearchForm() {
 
     return (
         <section className="search-form">
-            <form className="search">
+            <Search>
                 <input
                     type="text"
                     onChange={handleInputChange}
@@ -51,12 +58,12 @@ export default function SearchForm() {
                     placeholder="Search By Name"
                     autoComplete="off"
                 />
-            </form>
+            </Search>
             <SearchResults>
                 {data.map(data => {
                     return (
                         <Card key={data.index}>
-                            <h2>Name:{data.name}</h2>
+                            <h2>{data.name}</h2>
                             <h3>Status:{data.status}</h3>
                             <h3>Species:{data.species}</h3>
                             <h3>Gender:{data.gender}</h3>
